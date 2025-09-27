@@ -10,7 +10,7 @@ const TestPage = () => {
   const testAddDoctor = () => {
     const testDoctor = {
       name: 'Dr. Test User',
-      specialization: 'General Medicine',
+      specializations: ['General Medicine'],
       email: 'test@example.com',
       phone: '+91 98765 43214',
       bio: 'Test doctor for debugging',
