@@ -57,7 +57,10 @@ const Navbar = () => {
               className="h-10 w-auto hover:scale-105 transition-transform duration-200"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling.style.display = 'block';
+                const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                if (nextElement) {
+                  nextElement.style.display = 'block';
+                }
               }}
             />
             <span className="text-xl font-bold text-primary hidden">
