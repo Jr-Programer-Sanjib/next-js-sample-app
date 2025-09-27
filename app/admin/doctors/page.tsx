@@ -135,7 +135,7 @@ const DoctorsPage = () => {
   const resetForm = () => {
     setFormData({
       name: '',
-      specialization: '',
+      specializations: [],
       email: '',
       phone: '',
       bio: '',
@@ -245,18 +245,18 @@ const DoctorsPage = () => {
                  </button>
                  <button
                    onClick={() => {
-                     const testDoctor = {
-                       name: 'Dr. Test Doctor',
-                       specialization: 'General Medicine',
-                       email: 'test@newlifecare.com',
-                       phone: '+91 98765 43213',
-                       bio: 'This is a test doctor to verify functionality.',
-                       experience: '5 years',
-                       schedule: 'Mon-Fri: 10:00 AM - 6:00 PM',
-                       country: 'India',
-                       photoURL: '',
-                       isActive: true
-                     };
+                    const testDoctor = {
+                      name: 'Dr. Test Doctor',
+                      specializations: ['General Medicine'],
+                      email: 'test@newlifecare.com',
+                      phone: '+91 98765 43213',
+                      bio: 'This is a test doctor to verify functionality.',
+                      experience: '5 years',
+                      schedule: 'Mon-Fri: 10:00 AM - 6:00 PM',
+                      country: 'India',
+                      photoURL: '',
+                      isActive: true
+                    };
                      addDoctor(testDoctor);
                      toast.success('Test doctor added!');
                    }}
