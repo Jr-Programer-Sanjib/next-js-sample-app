@@ -24,6 +24,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check if Firebase is initialized
+    if (!db) {
+      return NextResponse.json(
+        { error: 'Firebase not initialized' },
+        { status: 500 }
+      );
+    }
+
     // Create message document
     const messageData = {
       name,

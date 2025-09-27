@@ -24,6 +24,14 @@ export async function PUT(request: NextRequest) {
       );
     }
 
+    // Check if Firebase is initialized
+    if (!db) {
+      return NextResponse.json(
+        { error: 'Firebase not initialized' },
+        { status: 500 }
+      );
+    }
+
     // Update appointment in Firestore
     const appointmentRef = doc(db, 'appointments', appointmentId);
     const updateData: any = {

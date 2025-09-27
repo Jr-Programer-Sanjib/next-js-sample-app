@@ -4,6 +4,14 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Firebase is initialized
+    if (!db) {
+      return NextResponse.json(
+        { error: 'Firebase not initialized' },
+        { status: 500 }
+      );
+    }
+
     const body = await request.json();
     const { patientName, phone, email, doctorId, doctorName, department, date, time, symptoms } = body;
 
